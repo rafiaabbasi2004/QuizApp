@@ -1,0 +1,38 @@
+{
+  "easy": [
+    {
+      "question": "What does CPU stand for?",
+      "options": ["Central Processing Unit", "Central Performance Unit", "Computer Power Unit", "Central Primary Unit"],
+      "answer": "Central Processing Unit"
+    },
+    {
+      "question": "What is the capital of France?",
+      "options": ["Berlin", "Paris", "Rome", "Madrid"],
+      "answer": "Paris"
+    }
+  ],
+  "medium": [
+    {
+      "question": "Which data structure uses LIFO order?",
+      "options": ["Queue", "Stack", "Array", "Tree"],
+      "answer": "Stack"
+    },
+    {
+      "question": "What does HTTP stand for?",
+      "options": ["Hyper Text Transfer Protocol", "High Text Transfer Protocol", "Hyper Transfer Text Protocol", "High Transfer Text Program"],
+      "answer": "Hyper Text Transfer Protocol"
+    }
+  ],
+  "hard": [
+    {
+      "question": "What is a perceptron in machine learning?",
+      "options": ["A data structure", "A single-layer neural network", "An algorithm for sorting", "A type of database"],
+      "answer": "A single-layer neural network"
+    },
+    {
+      "question": "Which algorithm is used for shortest path in graphs?",
+      "options": ["Kruskal’s", "Dijkstra’s", "Prim’s", "DFS"],
+      "answer": "Dijkstra’s"
+    }
+  ]
+}
