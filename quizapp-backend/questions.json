@@ -1,38 +1,188 @@
 {
   "easy": [
     {
+      "id": 1,
       "question": "What does CPU stand for?",
       "options": ["Central Processing Unit", "Central Performance Unit", "Computer Power Unit", "Central Primary Unit"],
       "answer": "Central Processing Unit"
     },
     {
+      "id": 2,
       "question": "What is the capital of France?",
       "options": ["Berlin", "Paris", "Rome", "Madrid"],
       "answer": "Paris"
+    },
+    {
+      "id": 3,
+      "question": "What is the primary language for web pages?",
+      "options": ["Python", "Java", "HTML", "C++"],
+      "answer": "HTML"
+    },
+    {
+      "id": 4,
+      "question": "Which of these is an operating system?",
+      "options": ["Microsoft Word", "Google Chrome", "Windows", "Adobe Photoshop"],
+      "answer": "Windows"
+    },
+    {
+      "id": 5,
+      "question": "What is 2 + 2?",
+      "options": ["3", "4", "5", "6"],
+      "answer": "4"
+    },
+    {
+      "id": 6,
+      "question": "Which planet is known as the 'Red Planet'?",
+      "options": ["Earth", "Mars", "Jupiter", "Venus"],
+      "answer": "Mars"
+    },
+    {
+      "id": 7,
+      "question": "What is the largest ocean on Earth?",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "answer": "Pacific Ocean"
+    },
+    {
+      "id": 8,
+      "question": "What animal lays eggs?",
+      "options": ["Dog", "Cat", "Chicken", "Cow"],
+      "answer": "Chicken"
+    },
+    {
+      "id": 9,
+      "question": "What do you call a baby dog?",
+      "options": ["Kitten", "Puppy", "Cub", "Chick"],
+      "answer": "Puppy"
+    },
+    {
+      "id": 10,
+      "question": "Which fruit is yellow?",
+      "options": ["Apple", "Banana", "Grape", "Strawberry"],
+      "answer": "Banana"
     }
   ],
   "medium": [
     {
+      "id": 11,
       "question": "Which data structure uses LIFO order?",
       "options": ["Queue", "Stack", "Array", "Tree"],
       "answer": "Stack"
     },
     {
+      "id": 12,
       "question": "What does HTTP stand for?",
       "options": ["Hyper Text Transfer Protocol", "High Text Transfer Protocol", "Hyper Transfer Text Protocol", "High Transfer Text Program"],
       "answer": "Hyper Text Transfer Protocol"
+    },
+    {
+      "id": 13,
+      "question": "In object-oriented programming, what is encapsulation?",
+      "options": ["The process of creating new objects", "Bundling data and methods that operate on the data within a single unit", "Hiding the implementation details of a class", "The ability of an object to take on many forms"],
+      "answer": "Bundling data and methods that operate on the data within a single unit"
+    },
+    {
+      "id": 14,
+      "question": "Which of these is a common sorting algorithm?",
+      "options": ["Breadth-First Search", "Depth-First Search", "Merge Sort", "Prim's Algorithm"],
+      "answer": "Merge Sort"
+    },
+    {
+      "id": 15,
+      "question": "What does SQL stand for?",
+      "options": ["Structured Query Language", "Standard Question Language", "Simple Query Logic", "Sequential Query Language"],
+      "answer": "Structured Query Language"
+    },
+    {
+      "id": 16,
+      "question": "What is the purpose of CSS in web development?",
+      "options": ["To define the structure of a web page", "To add interactivity to a web page", "To style the visual presentation of a web page", "To manage server-side logic"],
+      "answer": "To style the visual presentation of a web page"
+    },
+    {
+      "id": 17,
+      "question": "Which of the following is a non-relational database?",
+      "options": ["MySQL", "PostgreSQL", "MongoDB", "Oracle"],
+      "answer": "MongoDB"
+    },
+    {
+      "id": 18,
+      "question": "What is recursion in programming?",
+      "options": ["A loop that repeats indefinitely", "A function that calls itself", "A method for handling errors", "A way to define constants"],
+      "answer": "A function that calls itself"
+    },
+    {
+      "id": 19,
+      "question": "Which of these is a version control system?",
+      "options": ["Jira", "Slack", "Git", "Trello"],
+      "answer": "Git"
+    },
+    {
+      "id": 20,
+      "question": "What is the main function of a router in a network?",
+      "options": ["To connect devices within a local area network", "To filter network traffic", "To forward data packets between computer networks", "To provide wireless connectivity"],
+      "answer": "To forward data packets between computer networks"
     }
   ],
   "hard": [
     {
+      "id": 21,
       "question": "What is a perceptron in machine learning?",
       "options": ["A data structure", "A single-layer neural network", "An algorithm for sorting", "A type of database"],
       "answer": "A single-layer neural network"
     },
     {
+      "id": 22,
       "question": "Which algorithm is used for shortest path in graphs?",
       "options": ["Kruskal’s", "Dijkstra’s", "Prim’s", "DFS"],
       "answer": "Dijkstra’s"
+    },
+    {
+      "id": 23,
+      "question": "What is the purpose of a 'JOIN' clause in SQL?",
+      "options": ["To combine rows from two or more tables based on a related column between them", "To filter rows based on a condition", "To group rows that have the same values in specified columns into a summary row", "To sort the result-set of a query"],
+      "answer": "To combine rows from two or more tables based on a related column between them"
+    },
+    {
+      "id": 24,
+      "question": "In the context of concurrent programming, what is a 'deadlock'?",
+      "options": ["A state where a program has crashed", "A situation where two or more competing actions are each waiting for the other to finish", "A type of memory leak", "An error in compilation"],
+      "answer": "A situation where two or more competing actions are each waiting for the other to finish"
+    },
+    {
+      "id": 25,
+      "question": "What is the time complexity of searching in a balanced binary search tree?",
+      "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+      "answer": "O(log n)"
+    },
+    {
+      "id": 26,
+      "question": "Which of the following is a characteristic of a pure function in functional programming?",
+      "options": ["It can modify external state", "It always produces the same output for the same input and has no side effects", "It relies on external variables", "It throws exceptions frequently"],
+      "answer": "It always produces the same output for the same input and has no side effects"
+    },
+    {
+      "id": 27,
+      "question": "What is the CAP theorem in distributed systems?",
+      "options": ["Consistency, Availability, and Performance", "Concurrency, Atomicity, and Persistence", "Consistency, Availability, and Partition Tolerance", "Completeness, Accuracy, and Precision"],
+      "answer": "Consistency, Availability, and Partition Tolerance"
+    },
+    {
+      "id": 28,
+      "question": "What is the purpose of a 'hash function' in data structures?",
+      "options": ["To sort data", "To encrypt data", "To map data of arbitrary size to data of a fixed size", "To search for data in linear time"],
+      "answer": "To map data of arbitrary size to data of a fixed size"
+    },
+    {
+      "id": 29,
+      "question": "In computer security, what is a 'man-in-the-middle' attack?",
+      "options": ["An attack that floods a server with traffic", "An attack where the attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating", "An attack that injects malicious code into a website", "An attack that exploits a software vulnerability"],
+      "answer": "An attack where the attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating"
+    },
+    {
+      "id": 30,
+      "question": "What is the 'Halting Problem' in computability theory?",
+      "options": ["The problem of determining if a program will ever stop running or continue to run forever", "The problem of optimizing program execution speed", "The problem of converting assembly code to machine code", "The problem of debugging a program"],
+      "answer": "The problem of determining if a program will ever stop running or continue to run forever"
     }
   ]
 }

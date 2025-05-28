@@ -1,29 +1,53 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from fuzzylogic import get_difficulty
 import json
+import random
+from fuzzylogic import get_difficulty
+from genetic_algo import get_evolved_question_set
+
 app = Flask(__name__)
 CORS(app)
 
+# Load full question bank once
+with open("questions.json", "r") as f:
+    all_questions = json.load(f)
 @app.route("/api/quiz", methods=["POST"])
-def generate_quiz():
+def get_adaptive_question():
     data = request.json
     score = data.get("score", 0)
-    response_time = data.get("responseTime", 0)
+    response_time = data.get("responseTime", 10)
+    initial = data.get("initialDifficulty", "medium")
+    used_ids = data.get("usedQuestionIds", [])  # New: Get list of already used question IDs
 
-    level = get_difficulty(score, response_time)
+    # Use fuzzy logic
+    difficulty = get_difficulty(score, response_time) if score > 0 else initial
 
-    questions = get_questions_by_difficulty(level)  # dummy data for now
+    # Get available questions and filter out used ones
+    all_available = all_questions.get(difficulty, [])
+    available = [q for q in all_available if q["id"] not in used_ids]
 
-    return jsonify({"questions": questions, "level": level})
+    if available:
+        question = random.choice(available)
+    else:
+        question = {
+            "id": -1,
+            "question": "No more new questions available at this difficulty.",
+            "options": [],
+            "answer": ""
+        }
 
-def get_questions_by_difficulty(level):
-    with open("questions.json", "r") as f:
-        data = json.load(f)
+    return jsonify({
+        "questions": [question],
+        "level": difficulty
+    })
 
-    questions = data.get(level, [])
-    return questions[:2]  # return first 2 questions of that difficulty
 
+@app.route("/api/quiz/bulk", methods=["POST"])
+def get_evolved_quiz():
+    questions = get_evolved_question_set()
+    return jsonify({
+        "questions": questions
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)

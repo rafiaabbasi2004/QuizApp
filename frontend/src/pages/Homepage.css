@@ -31,11 +31,10 @@
     font-size: 20px;
     border-radius: 20px;
     border: 2px solid white;
-    transition: 1s ease-in;
+    transition: 0.2s ease-in;
 }
 .start-button:hover{
-    transform: translateY(-10px);
-    background-color:  rgba(95, 15, 95, 0.614);
+    background-color:  rgba(59, 2, 59, 0.984);
     cursor: pointer;
 }
 
@@ -108,4 +107,8 @@
 
 .quiz-container{
     background-color: rgba(141, 105, 141, 0.269);
+}
+
+option{
+    background-color: rgba(95, 15, 95, 0.614);
 }
