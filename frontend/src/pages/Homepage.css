@@ -1,0 +1,111 @@
+
+#home-content{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 5%;
+    height: fit-content;
+   
+}
+
+
+.logo-home{
+    height: 400px;
+    width: 400px;
+}
+
+.left-text{
+    margin: 0 4%;
+}
+.image-right{
+    margin-right: 5%;
+}
+.main-heading{
+    font-size: 4rem;
+}
+.start-button{
+    margin-top: 2%;
+    padding: 2% 5%;
+    background-color: rgba(59, 10, 59, 0.614);
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+    transition: 1s ease-in;
+}
+.start-button:hover{
+    transform: translateY(-10px);
+    background-color:  rgba(95, 15, 95, 0.614);
+    cursor: pointer;
+}
+
+#wave{
+    transform:rotate(180deg); transition: 0.3s
+}
+
+#wave path{
+    transform:translate(0, 0px); opacity:1
+}
+
+
+/* ABOUTTT */
+
+
+
+.about-section-main{
+ margin: 15% 5%;
+ align-items: center;
+ text-align: center;
+}
+.about-section-main h1{
+    margin-bottom: 4%;
+    font-size: 2.5rem;
+}
+.about-section{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+}
+
+.about-card{
+    align-items: center;
+    text-align: center;
+    background-color: rgba(100, 17, 100, 0.689);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 1%;
+    width: 20%;
+    transition: 1s ease;
+}
+.about-card:hover{
+    transform: translateY(-25px);
+    cursor: pointer;
+    background-color: rgba(110, 21, 110, 0.886) ;
+}
+
+.about-card img{
+    height:200px;
+    width:200px;
+}
+
+.submit-button{
+    margin-top: 4%;
+    padding: 2% 5%;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.submit-button:hover{
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+.quiz-container{
+    background-color: rgba(141, 105, 141, 0.269);
+}

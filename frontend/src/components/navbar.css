@@ -1,0 +1,38 @@
+.navbar-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(rgba(205, 202, 202, 0.664),rgba(81,9,81,0.731) );
+    background-color: rgba(81, 9, 81, 0.731);
+}
+
+.logo{
+    height: 80px;
+    width: 80px;
+}
+.logo-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+    margin: 0 2%;
+}
+.listitem{
+    list-style: none;
+    color: white;
+    font-size: large;
+    font-weight: 500;
+}
+.anchortag{
+    text-decoration: none;
+}
+.anchortag:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
