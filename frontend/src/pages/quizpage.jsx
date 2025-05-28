@@ -100,7 +100,7 @@ function QuizPage() {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
+    <div className="p-6 max-w-2xl rounded-2xl mx-auto my-8" style={{ backgroundColor: 'rgba(79, 24, 79, 0.703)' }}>
       <h2 className="text-2xl font-bold mb-4">AI Adaptive Quiz</h2>
       {console.log("questions[0] is:", questions[0])}
 

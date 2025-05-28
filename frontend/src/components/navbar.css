@@ -8,7 +8,7 @@
 .footer-main{
   
     background-color: rgba(48, 3, 48, 0.826);
-
+    
 }
 .logo{
     height: 80px;
@@ -30,7 +30,7 @@ ul{
 .listitem{
     list-style: none;
     color: white;
-    font-size: large;
+    font-size: medium;
     font-weight: 500;
 }
 .anchortag{
@@ -39,4 +39,5 @@ ul{
 .anchortag:hover{
     cursor: pointer;
     text-decoration: underline;
+    color: rgb(34, 1, 34);
 }

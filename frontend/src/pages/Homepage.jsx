@@ -17,7 +17,8 @@ export default function HomePage(){
               <div id="home-content">
                 <div className="left-text">
                     <h1 className="main-heading">Challenge your <br/> knowledge</h1>
-                    <h4>Take the at quiz and prepare you exams , challenge you knoledge kkeeep the jooasbd hjhbsdna vuueafhm iuahdba  uiagfbs jakd</h4>
+                    <h4>Welcome to the future of learning. Take intelligent quizzes, improve with every question, and compete to become a top scorer.
+Let AI guide your journey with personalized questions tailored to your performance.</h4>
                     <button onClick={()=>navigate("/quiz")} className="start-button">Start quiz</button>
                 </div>
 
@@ -37,20 +38,25 @@ export default function HomePage(){
                    <div className="about-section">
                      <div className="about-card">
                         <img src={leaderboard} alt="card1" className="about-card-image"  />
-                        <h2 className="about-card-heading">Leaderboards</h2>
-                        <p className="about-card-p">checkout oue leaderboard to disocver the top scorrers in various quizzes. join the competitions and climb the ranks</p>
+                        <h2 className="about-card-heading text-2xl font-medium">Track Your Progress</h2>
+                        <p className="about-card-p">Keep an eye on your standing and performance.
+                            Join ongoing challenges, monitor your growth, and move up with every quiz you take.</p>
                     </div>
 
                     <div className="about-card">
                         <img src={leaderboard} alt="card1" className="about-card-image"  />
-                        <h2 className="about-card-heading">Leaderboards</h2>
-                        <p className="about-card-p">checkout oue leaderboard to disocver the top scorrers in various quizzes. join the competitions and climb the ranks</p>
+                        <h2 className="about-card-heading">Top Performers</h2>
+                        <p className="about-card-p">Explore our leaderboard to find the highest scorers from all quizzes.
+                            Compete, improve, and rise through the ranks to see your name at the top!</p>
                     </div>
 
                     <div className="about-card">
                         <img src={leaderboard} alt="card1" className="about-card-image"  />
-                        <h2 className="about-card-heading">Leaderboards</h2>
-                        <p className="about-card-p">checkout oue leaderboard to disocver the top scorrers in various quizzes. join the competitions and climb the ranks</p>
+                        <h2 className="about-card-heading">Challenge the Best</h2>
+                        <p className="about-card-p">Think you can beat the best?
+Take on top scorers in our quizzes, climb the leaderboard, and earn your spot among the elite.
+
+</p>
                     </div>
                    </div>
                 </div>

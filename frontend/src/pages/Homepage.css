@@ -11,7 +11,7 @@
 
 .logo-home{
     height: 400px;
-    width: 400px;
+    width: 600px;
 }
 
 .left-text{
@@ -21,10 +21,12 @@
     margin-right: 5%;
 }
 .main-heading{
-    font-size: 4rem;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1%;
 }
 .start-button{
-    margin-top: 2%;
+    margin-top: 4%;
     padding: 2% 5%;
     background-color: rgba(59, 10, 59, 0.614);
     color: white;
@@ -75,9 +77,9 @@
     background-color: rgba(100, 17, 100, 0.689);
     border: 1px solid white;
     border-radius: 10px;
-    padding: 1%;
+    padding: 1% 2%;
     width: 20%;
-    transition: 1s ease;
+    transition: 0.5s ease;
 }
 .about-card:hover{
     transform: translateY(-25px);
@@ -89,7 +91,18 @@
     height:200px;
     width:200px;
 }
-
+.about-card-heading{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 2% 0;
+}
+.about-card-p{
+    font-size: 12px;
+    color: rgb(203, 200, 200);
+    padding-bottom: 4%;
+    text-align: justify;
+    
+}
 .submit-button{
     margin-top: 4%;
     padding: 2% 5%;
