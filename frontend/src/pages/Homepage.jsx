@@ -6,6 +6,7 @@ import leaderboard from '../assets/competition.png';
 import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/footer";
 export default function HomePage(){
 
     const navigate = useNavigate();
@@ -53,6 +54,10 @@ export default function HomePage(){
                     </div>
                    </div>
                 </div>
+            </section>
+
+            <section id="footer">
+                <Footer />
             </section>
          
         </div>

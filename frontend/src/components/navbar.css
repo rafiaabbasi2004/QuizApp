@@ -5,7 +5,11 @@
     background: linear-gradient(rgba(205, 202, 202, 0.664),rgba(81,9,81,0.731) );
     background-color: rgba(81, 9, 81, 0.731);
 }
+.footer-main{
+  
+    background-color: rgba(48, 3, 48, 0.826);
 
+}
 .logo{
     height: 80px;
     width: 80px;

@@ -12,11 +12,10 @@ export default function Navbar(){
             </div>
 
             <ul >
-                <li className="listitem"><a className="anchortag">Home</a></li>
-                <li className="listitem"><a className="anchortag">ABout</a></li>
-                <li className="listitem"><a className="anchortag">Help</a></li>
-                <li className="listitem"><a className="anchortag">StartQuiz</a></li>
-                <li className="listitem"><a className="anchortag">Profile</a></li>
+                <li className="listitem"><a className="anchortag" href="/">Home</a></li>
+                <li className="listitem"><a className="anchortag" href="#about">ABout</a></li>
+                <li className="listitem"><a className="anchortag" href="#footer">Help</a></li>
+                <li className="listitem"><a className="anchortag" href="/quiz">StartQuiz</a></li>
                 
             </ul>
      
