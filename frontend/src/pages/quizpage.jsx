@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function QuizPage() {
@@ -8,8 +8,23 @@ function QuizPage() {
   const [userAnswers, setUserAnswers] = useState(Array(10).fill(null));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(null);
+  const [responseTimes, setResponseTimes] = useState(Array(10).fill(0));
+  const [startTime, setStartTime] = useState(null);
+  const [elapsed, setElapsed] = useState(0);
 
+  useEffect(() => {
+    setStartTime(Date.now());
+    setElapsed(0);
+  }, [currentIndex]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (startTime) {
+        setElapsed(Math.floor((Date.now() - startTime) / 1000));
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [startTime]);
 
   const handleStartQuiz = async () => {
     console.log("Start Quiz button clicked. Quiz Type:", quizType);
@@ -18,6 +33,10 @@ function QuizPage() {
     setUserAnswers(Array(10).fill(null));
     setCurrentIndex(0);
     setScore(null);
+    setResponseTimes(Array(10).fill(0));
+    setStartTime(Date.now());
+    setElapsed(0);
+
     if (quizType === 'evolved') {
       console.log("Fetching evolved quiz questions from backend...");
       const res = await axios.post('http://localhost:5000/api/quiz/bulk');
@@ -27,39 +46,38 @@ function QuizPage() {
       console.log("Fetching adaptive quiz question from backend...");
       const res = await axios.post('http://localhost:5000/api/quiz', {
         score: 0,
-        responseTime: 10,
+        responseTime: 5,
         initialDifficulty: difficulty
       });
       console.log("Adaptive quiz question fetched.");
       const firstQ = res.data.questions[0];
-        setQuestions(prev => {
+      setQuestions(prev => {
         const copy = [...prev];
         copy[0] = firstQ;
-        return copy; // This ensures React knows it changed
-        });
-            }
+        return copy;
+      });
+    }
   };
 
- const fetchNextAdaptiveQuestion = async () => {
-  const currentScore = calculateScore(userAnswers);
-  const usedQuestions = questions
-    .filter(q => q !== null)
-    .map(q => q.question); // Assuming question text is unique
+  const fetchNextAdaptiveQuestion = async () => {
+    const currentScore = calculateScore(userAnswers);
+    const usedQuestions = questions
+      .filter(q => q !== null)
+      .map(q => q.question);
 
-  const res = await axios.post('http://localhost:5000/api/quiz', {
-    score: currentScore,
-    responseTime: 10,
-    initialDifficulty: difficulty,
-    usedQuestions: usedQuestions,
-  });
+    const res = await axios.post('http://localhost:5000/api/quiz', {
+      score: currentScore,
+      responseTime: responseTimes[currentIndex],
+      initialDifficulty: difficulty,
+      usedQuestions: usedQuestions,
+    });
 
-  setQuestions(prev => {
-    const copy = [...prev];
-    copy[currentIndex + 1] = res.data.questions[0];
-    return copy;
-  });
-};
-
+    setQuestions(prev => {
+      const copy = [...prev];
+      copy[currentIndex + 1] = res.data.questions[0];
+      return copy;
+    });
+  };
 
   const handleOptionChange = (val) => {
     const copy = [...userAnswers];
@@ -68,6 +86,15 @@ function QuizPage() {
   };
 
   const handleNext = async () => {
+    const endTime = Date.now();
+    const timeTaken = Math.floor((endTime - startTime) / 1000);
+
+    setResponseTimes(prev => {
+      const copy = [...prev];
+      copy[currentIndex] = timeTaken;
+      return copy;
+    });
+
     if (currentIndex < 9) {
       if (quizType === 'adaptive' && !questions[currentIndex + 1]) {
         await fetchNextAdaptiveQuestion();
@@ -76,6 +103,7 @@ function QuizPage() {
     } else {
       const finalScore = calculateScore(userAnswers);
       setScore(finalScore);
+      console.log("All response times:", responseTimes);
     }
   };
 
@@ -97,6 +125,9 @@ function QuizPage() {
     setCurrentIndex(0);
     setScore(null);
     setDifficulty('');
+    setResponseTimes(Array(10).fill(0));
+    setStartTime(null);
+    setElapsed(0);
   };
 
   return (
@@ -105,7 +136,6 @@ function QuizPage() {
       {console.log("questions[0] is:", questions[0])}
 
       {(!questions[0] && score === null && questions.every(q => q === null)) && (
-
         <div className="space-y-4">
           <div>
             <label className="font-semibold">Select Quiz Type:</label>
@@ -145,13 +175,13 @@ function QuizPage() {
           </button>
         </div>
       )}
-      
 
       {questions[currentIndex] && score === null && (
         <div className="mt-6 space-y-4">
           <p className="font-semibold">
             Q{currentIndex + 1}: {questions[currentIndex].question}
           </p>
+          <div className="text-sm text-white">⏱️ Time taken: {elapsed} seconds</div>
           <div className="flex flex-col space-y-2">
             {questions[currentIndex].options.map((opt, i) => (
               <label key={i}>
